@@ -1,0 +1,36 @@
+configs:
+  compile:
+    description: compile outputs
+    keywords:
+      error:
+        color: red
+        enabled: true
+      fail:
+        color: red
+        enabled: true
+      warning:
+        color: yellow
+        enabled: true
+    log_dir: ~/logs/
+    name: compile
+    silent: false
+    timestamp: true
+  default:
+    description: Default configuration with error highlighting
+    keywords:
+      error:
+        color: red
+        enabled: true
+      fail:
+        color: red
+        enabled: true
+      warning:
+        color: yellow
+        enabled: true
+    log_dir: ~/logs/
+    name: default
+    silent: false
+    timestamp: true
+current: compile
+settings:
+  panel_height: 45
