@@ -4,14 +4,11 @@
 
  <div align="center">
 
-
-
- https://img.shields.io/badge/python-3.6%2B-blue
-
- https://img.shields.io/badge/License-MIT-yellow.svg
-
- https://img.shields.io/badge/code%20style-black-000000.svg
-
+<p align="center">
+  <img src="https://img.shields.io/badge/python-3.6%2B-blue" alt="Python Version">
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License">
+  <img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Status">
+</p>
 
 
  ​专业的命令行输出捕获与日志记录工具​ | ​Professional command-line output capture and logging tool​
@@ -84,14 +81,11 @@
 
  - ​模板支持​：基于默认配置快速创建新配置
 
-
-
  ---
 
 
 
  ## 🚀 快速开始 | Quick Start
-
 
 
  ### 安装 | Installation
@@ -119,19 +113,12 @@
  ```bash
 
  # 运行命令并记录输出 | Run command with logging
-
  rwl make all
 
-
-
  # 编译程序并记录输出 | Compile with logging
-
  rwl gcc -o program main.c
 
-
-
  # 运行Python脚本并记录 | Run Python script with logging
-
  rwl python3 script.py
 
  ```
@@ -143,37 +130,21 @@
  ```yaml
 
  # rwl.yaml
-
  current: "development"
-
  configs:
-
    default:
-
      name: "default"
-
      timestamp: true
-
      silent: false
-
      log_dir: "~/logs/"
-
      keywords:
-
        error: {color: "red", enabled: true}
-
        warning: {color: "yellow", enabled: true}
-
    development:
-
      name: "development"
-
      timestamp: true
-
      silent: false
-
      log_dir: "~/logs/dev/"
-
  ```
 
 
@@ -191,13 +162,11 @@
  ```bash
 
  # 基本语法 | Basic syntax
-
  rwl [command] [arguments...]
 
 
 
  # 示例 | Example
-
  rwl make clean all test
 
  ```
@@ -209,17 +178,13 @@
  ```bash
 
  # 交互式配置管理 | Interactive configuration
-
  rwl -c
-
  rwl --config
 
 
 
  # 配置输出面板大小 | Configure panel size
-
  rwl -s
-
  rwl --setting
 
  ```
@@ -231,9 +196,7 @@
  ```bash
 
  # 不显示输出，仅记录到文件
-
  # Run without display, only log to file
-
  rwl --silent npm install
 
  ```
@@ -245,17 +208,13 @@
  ```bash
 
  # 显示帮助信息 | Show help
-
  rwl -h
-
  rwl --help
 
 
 
  # 显示版本 | Show version
-
  rwl -v
-
  rwl --version
 
  ```
@@ -315,15 +274,10 @@
  ```yaml
 
  keywords:
-
    error: {color: "red", enabled: true}
-
    warning: {color: "yellow", enabled: true}
-
    fail: {color: "red", enabled: true}
-
    success: {color: "green", enabled: true}
-
    info: {color: "blue", enabled: true}
 
  ```
@@ -337,9 +291,7 @@
  # 格式: 程序名日期时间.log
 
  # Format: programname_YYYYMMDD_HHMMSS.log
-
  make_20260103_143022.log
-
  gcc_20260103_143025.log
 
  ```
@@ -351,7 +303,6 @@
  ```yaml
 
  settings:
-
    panel_height: 20  # 输出面板高度 | Output panel height
 
  ```
@@ -369,21 +320,13 @@
  .
 
  ├── LICENSE              # 许可证文件
-
  ├── README.md           # 说明文档
-
  ├── bin/               # 可执行文件
-
  │   └── rwl            # 主程序入口
-
  ├── rwl.yaml           # 配置文件
-
  ├── src/               # 源代码
-
  │   └── run_with_log.py
-
  └── test/              # 测试文件
-
      └── virtual_compile.py
 
  ```
@@ -394,25 +337,6 @@
 
 
 
- ## ⚙️ 技术栈 | Tech Stack
-
-
-
- | 技术 | 用途 | 版本 |
-
- |------|------|------|
-
- | ​Python 3.6+​​ | 核心运行时 | >= 3.6 |
-
- | ​Rich​ | 终端UI库 | 13.0+ |
-
- | ​PyYAML​ | 配置解析 | 6.0+ |
-
- | ​Inquirer​ | 交互式界面 | 2.8+ |
-
-
-
- ---
 
 
 
@@ -425,11 +349,8 @@
  ```bash
 
  # 记录构建过程，捕获编译错误
-
  # Log build process, capture compilation errors
-
  rwl make -j4
-
  rwl cmake --build .
 
  ```
@@ -441,11 +362,8 @@
  ```bash
 
  # 捕获测试输出，分析失败原因
-
  # Capture test output, analyze failures
-
  rwl python -m pytest
-
  rwl go test -v ./...
 
  ```
@@ -457,11 +375,8 @@
  ```bash
 
  # 记录依赖安装过程
-
  # Log dependency installation
-
  rwl npm install
-
  rwl pip install -r requirements.txt
 
  ```
@@ -471,13 +386,9 @@
  ### 🔍 调试分析 | Debugging Analysis
 
  ```bash
-
  # 长时间运行的进程监控
-
  # Monitor long-running processes
-
  rwl python data_processing.py
-
  rwl ./long_running_script.sh
 
  ```
@@ -488,67 +399,12 @@
 
 
 
- ## 🤝 贡献指南 | Contributing
-
-
-
- 我们欢迎各种形式的贡献！以下是参与项目的步骤：
-
-
-
- We welcome all forms of contribution! Here are the steps to get involved:
-
-
-
- 1. ​Fork 仓库​ | Fork the repository
-
- 2. ​创建分支​ | Create your feature branch (git checkout -b feature/AmazingFeature)
-
- 3. ​提交更改​ | Commit your changes (git commit -m 'Add some AmazingFeature')
-
- 4. ​推送分支​ | Push to the branch (git push origin feature/AmazingFeature)
-
- 5. ​提交PR​ | Open a Pull Request
-
-
-
- ### 开发要求 | Development Requirements
-
- ```bash
-
- # 安装开发依赖 | Install development dependencies
-
- pip install -r requirements-dev.txt
-
-
-
- # 运行测试 | Run tests
-
- python -m pytest
-
-
-
- # 代码格式化 | Code formatting
-
- black src/
-
- isort src/
-
- ```
-
-
-
- ---
-
-
 
  ## 📄 许可证 | License
 
 
 
  本项目采用 MIT 许可证 - 查看 LICENSE文件了解详情。
-
-
 
  This project is licensed under the MIT License - see the LICENSEfile for details.
 
@@ -574,7 +430,7 @@
 
  - 💡 提出功能请求
 
- - 📧 发送邮件至：support@example.com
+ - 📧 发送邮件至：AStor.Jiang@outlook.com
 
 
 
