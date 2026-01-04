@@ -1031,15 +1031,14 @@ A tool to capture and log program output with real-time display
   python run_with_log.py [options] <command> [args...]
 
 [bold]Options:[/bold]
-  -h, --help      Show this help message
-  -c, --config    Interactive configuration management
-  -s, --setting   Configure output panel settings
-  -v, --version   Show version information
+  -h, --help        Show this help message
+  --config          Interactive configuration management
+  --setting         Configure output panel settings
 
 [bold]Examples:[/bold]
   rwl make all              # Run command with logging
-  rwl -c                    # Open configuration manager
-  rwl -s                    # Configure panel settings
+  rwl --config              # Open configuration manager
+  rwl --setting             # Configure panel settings
   rwl gcc -o test test.c    # Compile with logging
 
 [bold]Features:[/bold]
@@ -1062,24 +1061,6 @@ A tool to capture and log program output with real-time display
         """
         
         self.console.print(Panel(help_text, title="Help", border_style="cyan"))
-    
-    def show_version(self) -> None:
-        """Show version information"""
-        version_info = """
-[bold cyan]RWL - Run With Log[/bold cyan]
-Version: 1.0.0
-Python: 3.6+
-Author: Python Engineer
-License: MIT
-
-Libraries:
-  • rich 1.12.0
-  • inquirer 2.8.0
-  • PyYAML 6.0
-        """
-        
-        self.console.print(Panel(version_info, title="Version Information", border_style="green"))
-
 
 def main():
     """Main entry point"""
@@ -1091,13 +1072,13 @@ def main():
     )
     
     parser.add_argument(
-        '-c', '--config',
+        '--config',
         action='store_true',
         help='Interactive configuration management'
     )
     
     parser.add_argument(
-        '-s', '--setting',
+        '--setting',
         action='store_true',
         help='Configure output panel settings'
     )
@@ -1108,11 +1089,6 @@ def main():
         help='Show help information'
     )
     
-    parser.add_argument(
-        '-v', '--version',
-        action='store_true',
-        help='Show version information'
-    )
     
     # Parse known args first, leave command for rwl
     args, remaining = parser.parse_known_args()
@@ -1123,10 +1099,6 @@ def main():
     # Handle options
     if args.help:
         tool.show_help()
-        return 0
-    
-    if args.version:
-        tool.show_version()
         return 0
     
     if args.config:
